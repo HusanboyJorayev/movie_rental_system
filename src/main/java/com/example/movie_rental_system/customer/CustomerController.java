@@ -1,11 +1,46 @@
 package com.example.movie_rental_system.customer;
 
+import com.example.movie_rental_system.country.CountryDto;
+import com.example.movie_rental_system.dto.ResponseDto;
+import com.example.movie_rental_system.dto.SimpleCrud;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("customer")
-public class CustomerController {
+public class CustomerController implements SimpleCrud<Integer,CustomerDto> {
+    private final CustomerService customerService;
+
+    @Override
+    @PostMapping("/create")
+    public ResponseDto<CustomerDto> create(@RequestBody CustomerDto dto) {
+        return this.customerService.create(dto);
+    }
+
+    @Override
+    @GetMapping("/get")
+    public ResponseDto<CustomerDto> get(@RequestParam Integer id) {
+        return this.customerService.get(id);
+    }
+
+    @Override
+    @PutMapping("/update")
+    public ResponseDto<CustomerDto> update(@RequestBody CustomerDto dto, @RequestParam Integer id) {
+        return this.customerService.update(dto, id);
+    }
+
+    @Override
+    @DeleteMapping("/delete")
+    public ResponseDto<CustomerDto> delete(@RequestParam Integer id) {
+        return this.customerService.delete(id);
+    }
+
+    @Override
+    @GetMapping("/getAll")
+    public ResponseDto<List<CustomerDto>> getAll() {
+        return this.customerService.getAll();
+    }
 }
