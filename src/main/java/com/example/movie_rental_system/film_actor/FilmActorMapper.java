@@ -1,7 +1,5 @@
 package com.example.movie_rental_system.film_actor;
 
-import com.example.movie_rental_system.film.Film;
-import com.example.movie_rental_system.film.FilmDto;
 import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")

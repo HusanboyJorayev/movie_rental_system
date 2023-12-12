@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("category")
+@RequestMapping("city")
 public class CityController implements SimpleCrud<Integer,CityDto> {
     private final CityService cityService;
 
