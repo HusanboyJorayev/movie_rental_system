@@ -1,9 +1,11 @@
 package com.example.movie_rental_system.rental;
 
+import com.example.movie_rental_system.payment.Payment;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,6 +21,9 @@ public class Rental {
     private Integer customerId;
     private Integer stuffId;
     private Integer inventoryId;
+
+    @OneToMany(mappedBy = "",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    List<Payment>payment;
 
 
     private LocalDateTime createdAt;

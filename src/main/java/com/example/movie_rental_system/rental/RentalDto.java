@@ -1,8 +1,11 @@
 package com.example.movie_rental_system.rental;
 
+import com.example.movie_rental_system.payment.Payment;
+import com.example.movie_rental_system.payment.PaymentDto;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,6 +17,9 @@ public class RentalDto {
     private Integer customerId;
     private Integer stuffId;
     private Integer inventoryId;
+
+    List<PaymentDto> payment;
+
 
 
     private LocalDateTime createdAt;

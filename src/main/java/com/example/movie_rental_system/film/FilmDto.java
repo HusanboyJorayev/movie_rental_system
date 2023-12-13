@@ -1,8 +1,13 @@
 package com.example.movie_rental_system.film;
 
+import com.example.movie_rental_system.film_actor.FilmActor;
+import com.example.movie_rental_system.film_actor.FilmActorDto;
+import com.example.movie_rental_system.inventory.Inventory;
+import com.example.movie_rental_system.inventory.InventoryDto;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,6 +27,11 @@ public class FilmDto {
     private Integer length;
     private Integer replacementCost;
     private Integer rating;
+
+    private List<InventoryDto> inventory;
+    private List<FilmActorDto>filmActor;
+
+
 
 
     private LocalDateTime createdAt;

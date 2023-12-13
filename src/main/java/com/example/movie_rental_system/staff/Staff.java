@@ -1,9 +1,12 @@
 package com.example.movie_rental_system.staff;
 
+import com.example.movie_rental_system.payment.Payment;
+import com.example.movie_rental_system.rental.Rental;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,6 +28,13 @@ public class Staff {
     private String username;
     private String password;
     private Character active;
+
+
+    @OneToMany(mappedBy = "stuffId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<Rental>rental;
+
+    @OneToMany(mappedBy = "stuffId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<Payment>payment;
 
 
     private LocalDateTime createdAt;

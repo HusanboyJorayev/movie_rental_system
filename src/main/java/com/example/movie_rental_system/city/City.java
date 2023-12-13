@@ -1,9 +1,11 @@
 package com.example.movie_rental_system.city;
 
+import com.example.movie_rental_system.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,6 +20,9 @@ public class City {
     private Integer id;
     private Integer countryId;
     private String city;
+
+    @OneToMany(mappedBy = "cityId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<Address>address;
 
 
     private LocalDateTime createdAt;

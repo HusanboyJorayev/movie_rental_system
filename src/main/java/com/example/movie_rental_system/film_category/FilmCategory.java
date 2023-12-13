@@ -1,9 +1,11 @@
 package com.example.movie_rental_system.film_category;
 
+import com.example.movie_rental_system.film.Film;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter

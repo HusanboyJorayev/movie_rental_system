@@ -1,9 +1,12 @@
 package com.example.movie_rental_system.film;
 
+import com.example.movie_rental_system.film_actor.FilmActor;
+import com.example.movie_rental_system.inventory.Inventory;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,6 +30,12 @@ public class Film {
     private Integer length;
     private Integer replacementCost;
     private Integer rating;
+
+    @OneToMany(mappedBy = "filmId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<Inventory>inventory;
+
+    @OneToMany(mappedBy = "filmId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<FilmActor>filmActor;
 
 
     private LocalDateTime createdAt;
