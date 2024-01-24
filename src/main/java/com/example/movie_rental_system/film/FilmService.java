@@ -35,7 +35,7 @@ public class FilmService implements SimpleCrud<Integer, FilmDto> {
                 .map(film -> ResponseDto.<FilmDto>builder()
                         .success(true)
                         .message("Ok")
-                        .data(this.filmMapper.toDto(film))
+                        .data(this.filmMapper.toDtoWithOthers(film))
                         .build())
                 .orElse(ResponseDto.<FilmDto>builder()
                         .code(-1)

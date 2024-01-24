@@ -36,7 +36,7 @@ public class ActorService implements SimpleCrud<Integer, ActorDto> {
                 .map(actor -> ResponseDto.<ActorDto>builder()
                         .success(true)
                         .message("Ok")
-                        .data(this.actorMapper.toDto(actor))
+                        .data(this.actorMapper.toDtoWithOthers(actor))
                         .build())
                 .orElse(ResponseDto.<ActorDto>builder()
                         .code(-1)
