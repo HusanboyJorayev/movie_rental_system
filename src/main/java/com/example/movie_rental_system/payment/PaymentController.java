@@ -3,12 +3,14 @@ package com.example.movie_rental_system.payment;
 import com.example.movie_rental_system.dto.ResponseDto;
 import com.example.movie_rental_system.dto.SimpleCrud;
 import com.example.movie_rental_system.language.LanguageDto;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@Tag(name = "Payment")
 @RequiredArgsConstructor
 @RequestMapping("payment")
 public class PaymentController implements SimpleCrud<Integer, PaymentDto> {

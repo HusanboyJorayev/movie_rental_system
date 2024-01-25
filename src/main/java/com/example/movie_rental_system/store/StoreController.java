@@ -2,12 +2,14 @@ package com.example.movie_rental_system.store;
 
 import com.example.movie_rental_system.dto.ResponseDto;
 import com.example.movie_rental_system.dto.SimpleCrud;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@Tag(name = "Store")
 @RequiredArgsConstructor
 @RequestMapping("store")
 public class StoreController implements SimpleCrud<Integer, StoreDto> {

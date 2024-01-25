@@ -1,5 +1,11 @@
-FROM openjdk:19
-ADD target/test-classes/tmovie_rental_system-0.0.1-SNAPSHOT.jar
+FROM openjdk:17
+
+#WORKDIR /app
+
+ADD target/movie-app.jar app.jar
+
 VOLUME /simple.app
-ENTRYPOINT["java","-jar","/app.jar"]
+
 EXPOSE 8181
+
+ENTRYPOINT ["java", "-jar", "/app.jar"]

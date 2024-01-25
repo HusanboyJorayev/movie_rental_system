@@ -2,11 +2,13 @@ package com.example.movie_rental_system.actor;
 
 import com.example.movie_rental_system.dto.ResponseDto;
 import com.example.movie_rental_system.dto.SimpleCrud;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.tags.Tags;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Tag(name = "Actor")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("actor")

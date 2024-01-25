@@ -3,12 +3,14 @@ package com.example.movie_rental_system.language;
 import com.example.movie_rental_system.dto.ResponseDto;
 import com.example.movie_rental_system.dto.SimpleCrud;
 import com.example.movie_rental_system.inventory.InventoryDto;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@Tag(name = "Language")
 @RequiredArgsConstructor
 @RequestMapping("language")
 public class LanguageController implements SimpleCrud<Integer, LanguageDto> {
